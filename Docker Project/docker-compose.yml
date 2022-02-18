@@ -9,14 +9,9 @@ services:
   api:
     depends_on:
       - postgres
-    build:
-      dockerfile: Dockerfile.dev
-      context: .
+    image: simple-api:latest
     ports:
       - '3000:3000'
-    volumes:
-      - /usr/app/node_modules
-      - .:/usr/app
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres_password
